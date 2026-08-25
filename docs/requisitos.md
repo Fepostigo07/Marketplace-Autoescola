@@ -189,6 +189,14 @@
 
 ## 7. Dicionário de Dados
 
+Abaixo estão os modelos que ilustram a arquitetura de persistência poliglota do sistema (Relacional e NoSQL), seguidos pelo detalhamento de cada entidade.
+
+### Modelo Conceitual
+![Modelo Conceitual do Banco de Dados](./diagramas/modelo-conceitual.png)
+
+### Modelo Lógico
+![Modelo Lógico do Banco de Dados](./diagramas/modelo_logico.png)
+
 **Instrutor:**
 * ID (UID - Chave Primária)
 * Nome Completo (String)
