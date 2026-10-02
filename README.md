@@ -26,7 +26,7 @@ Toda a arquitetura, regras de negócio e fluxos do sistema foram documentados an
 
 - **Front-end:** A definir
 - **Back-end:** A definir
-- **Banco de Dados:** A definir
+- **Banco de Dados:** PostgreSQL e MongoDB
 - **Infraestrutura e APIs:** OCR, Geolocation API, Cloud Storage.
 
 ## 🚀 Como Executar o Projeto
