@@ -8,6 +8,7 @@ Este documento centraliza todas as interfaces que precisam ser prototipadas para
 | 02/10/2026 | 1.0    | Mapeamento inicial das telas de Autenticação e Onboarding     | Felipe Postigo  |
 | 03/10/2026 | 1.1    | Mapeamento inicial das telas de Busca e Agendamento| Felipe Postigo  |
 | 03/10/2026 | 1.2    | Mapeamento inicial das telas de Gestão de Aulas e Chat| Felipe Postigo  |
+| 03/10/2026 | 1.3    | Mapeamento inicial das telas do Dashboard e Avaliações| Felipe Postigo  |
 
 ## 1. Autenticação e Onboarding
 
@@ -85,7 +86,7 @@ Este documento centraliza todas as interfaces que precisam ser prototipadas para
     - Botão: "Ir para a Tela Inicial" (Acesso restrito até aprovação)
 - **Rastreabilidade:** RF008, RF012, RF013
 
-## 2. Épico: Busca e Agendamento
+## 2. Busca e Agendamento
 
 ### 2.1. Fluxo de Busca e Filtros
 
@@ -175,5 +176,44 @@ Este documento centraliza todas as interfaces que precisam ser prototipadas para
   * Exibição de alerta visual de penalidade explicando as consequências de cancelamentos tardios ou No-Shows.
   * Botões: "Confirmar Cancelamento" e "Voltar/Desistir".
 * **Rastreabilidade:** US018, US033, US034, RF031, RF032.
+
+## 4. Dashboard e Avaliações
+
+### 4.1. Fluxo de Avaliação Pós-Aula
+
+#### 4.1.1. Modal de Avaliação (Aluno)
+* **Objetivo:** Coletar a nota e o feedback do aluno apenas para aulas com o status "Concluída".
+* **Elementos Principais:**
+  * Componente de seleção visual: 1 a 5 estrelas (obrigatório).
+  * Campo de texto (Textarea): Comentário opcional com limite de 500 caracteres.
+  * Botões: "Enviar Avaliação" e "Pular/Agora Não".
+* **Rastreabilidade:** US015, US016, RF020, RF021, RF022.
+
+#### 4.1.2. Painel de Avaliações (Instrutor)
+* **Objetivo:** Permitir que o instrutor acompanhe seu desempenho visualizando a média de notas e os comentários recebidos.
+* **Elementos Principais:**
+  * Indicador em destaque: Nota Média Geral e Total de Avaliações.
+  * Lista/Cards contendo os comentários em texto deixados pelos alunos.
+* **Rastreabilidade:** US032.
+
+### 4.2. Fluxo de Backoffice (Administrador)
+
+#### 4.2.1. Dashboard Principal (Administrador)
+* **Objetivo:** Exibir indicadores consolidados em tempo real para o gestor acompanhar a saúde da plataforma.
+* **Elementos Principais:**
+  * Card/Métrica: Total de alunos cadastrados.
+  * Card/Métrica: Funil de Instrutores (agrupados por status: Em Processamento, Pendente, Ativo, etc.).
+  * Gráfico ou Card/Métrica: Volume de aulas agendadas, concluídas e canceladas.
+  * Menu de navegação lateral para acessar a fila de aprovação e gestão de contas.
+* **Rastreabilidade:** US042, RF047.
+
+#### 4.2.2. Tela de Revisão Manual de Documentos
+* **Objetivo:** Interface para o Administrador analisar perfis de instrutores que caíram na fila de revisão ou foram suspensos.
+* **Elementos Principais:**
+  * Visualizador de imagens em tela cheia para a CNH, Credencial do Detran e Documento do Veículo.
+  * Botões de Ação: "Aprovar Cadastro", "Reprovar" e "Bloquear Conta".
+  * Campo de texto (Input) que aparece ao clicar em "Reprovar" ou "Bloquear" para digitar o motivo (feedback para o instrutor).
+  * Botão de ação secundária: "Zerar Suspensão" ou "Remover Bloqueio" (para perdões após análise de disputa).
+* **Rastreabilidade:** US038, US039, US040, US041.
 
 *Documento criado para basear a construção de Wireframes (Baixa Fidelidade) e UI (Alta Fidelidade).*
