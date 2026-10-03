@@ -7,6 +7,7 @@ Este documento centraliza todas as interfaces que precisam ser prototipadas para
 | :--------- | :----- | :----------------------------------------------------- | :-------------- |
 | 02/10/2026 | 1.0    | Mapeamento inicial das telas de Autenticação e Onboarding     | Felipe Postigo  |
 | 03/10/2026 | 1.1    | Mapeamento inicial das telas de Busca e Agendamento| Felipe Postigo  |
+| 03/10/2026 | 1.2    | Mapeamento inicial das telas de Gestão de Aulas e Chat| Felipe Postigo  |
 
 ## 1. Autenticação e Onboarding
 
@@ -128,5 +129,51 @@ Este documento centraliza todas as interfaces que precisam ser prototipadas para
   * Aviso: "Disclaimer Legal" informando que o pagamento deve ser feito diretamente ao instrutor no momento do encontro.
   * Botão: Confirmar Agendamento.
 * **Rastreabilidade:** US010, US017, US023, RF017, RF025.
+
+## 3. Gestão de Aulas e Chat
+
+### 3.1. Fluxo de Acompanhamento e Status
+
+#### 3.1.1. Painel "Minhas Aulas" (Aluno e Instrutor)
+* **Objetivo:** Estruturar a tela de acompanhamento para que o usuário visualize rapidamente em qual etapa da máquina de estados cada aula se encontra.
+* **Elementos Principais:**
+  * Lista ou cards de agendamentos.
+  * Estados visuais (Badges/Tags): Pendente, Confirmada, Em Andamento, Concluída e Cancelada.
+  * (Visão Instrutor) Botões rápidos nos cards pendentes: "Aceitar" e "Recusar".
+* **Rastreabilidade:** US014, US028, US031, RF018, RF019.
+
+### 3.2. Fluxo de Execução da Aula e Validação
+
+#### 3.2.1. Tela de Detalhes da Aula e Sistema de PIN
+* **Objetivo:** Exibir as informações completas do encontro e garantir a validação de segurança para iniciar a aula.
+* **Elementos Principais:**
+  * Resumo do endereço de referência e horário.
+  * (Visão Aluno) Componente visual destacando o "PIN de Segurança" gerado pelo sistema.
+  * (Visão Instrutor) Campo de input de texto/número para digitar o PIN fornecido pelo aluno.
+  * (Visão Instrutor) Botão para alterar o status para "Em Andamento" (bloqueado até inserção do PIN correto).
+  * Botão de acesso ao Chat.
+* **Rastreabilidade:** US024, US029, US030, US036, US037, RF027.
+
+### 3.3. Fluxo de Comunicação Segura
+
+#### 3.3.1. Interface do Chat Interno
+* **Objetivo:** Permitir a troca de mensagens seguras entre aluno e instrutor para alinhar detalhes do encontro, sem expor dados pessoais.
+* **Elementos Principais:**
+  * Cabeçalho com o nome da outra parte e status da aula.
+  * Área principal com o histórico de mensagens enviadas e recebidas.
+  * Alerta visual de segurança fixado na tela informando sobre a proibição do envio de links ou números de telefone.
+  * Campo de input de texto e botão de enviar.
+* **Rastreabilidade:** US022, US035, RF026, RF037.
+
+### 3.4. Fluxo de Cancelamento
+
+#### 3.4.1. Modal de Cancelamento de Aula
+* **Objetivo:** Permitir a desistência da aula por qualquer uma das partes e coletar o motivo para auditoria.
+* **Elementos Principais:**
+  * Seleção de Motivo do cancelamento (ex: imprevisto, problema no veículo).
+  * (Visão Instrutor) Opção específica para registrar "No-Show" (aluno não compareceu).
+  * Exibição de alerta visual de penalidade explicando as consequências de cancelamentos tardios ou No-Shows.
+  * Botões: "Confirmar Cancelamento" e "Voltar/Desistir".
+* **Rastreabilidade:** US018, US033, US034, RF031, RF032.
 
 *Documento criado para basear a construção de Wireframes (Baixa Fidelidade) e UI (Alta Fidelidade).*
