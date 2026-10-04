@@ -4,6 +4,7 @@
 | Data       | Versão | Descrição das Alterações                                                                 | Autor(es)       |
 | :--------- | :----- | :--------------------------------------------------------------------------------------- | :-------------- |
 | 16/08/2026 | 1.0    | Criação do documento com requisitos funcionais, não funcionais, atores fluxos lógicos, validação OCR e Dashboard.       | Felipe Postigo  |
+| 03/10/2026 | 1.1    | Criação e adição do diagrama de atividades do Fluxo de Validação de Segurança        | Felipe Postigo  |
 
 ---
 
@@ -21,6 +22,10 @@
 4. O sistema analisa o texto retornado buscando padrões e palavras-chave obrigatórias (ex: "DETRAN", "PR", "INSTRUTOR DE TRÂNSITO", "VALIDADE", e confere se o nome bate com o cadastro).
 5. **Se a API de OCR retornar um Nível de Confiança (`Score_Confianca_OCR`) igual ou superior a 85% para as palavras-chave obrigatórias e as datas forem válidas:** O status do instrutor muda automaticamente para `Ativo` e ele passa a aparecer nas buscas.
 6. **Se o sistema não encontrar as palavras (foto borrada, documento incorreto) ou a validade expirar:** O status muda para `Pendente (Revisão Manual)`, e o perfil entra na fila do painel do Administrador (Backoffice) para aprovação ou reprovação humana.
+
+## Diagrama de Atividades
+![Diagrama de Atividades do Fluxo de Validação de Segurança ](./diagramas/Diagrama_Atividade_Onboarding_OCR.png)
+
 
 ### Fluxo de Busca e Agendamento de Aula
 1. O Aluno acessa a plataforma e compartilha sua localização atual (ou digita um endereço).
