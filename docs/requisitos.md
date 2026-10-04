@@ -5,6 +5,7 @@
 | :--------- | :----- | :--------------------------------------------------------------------------------------- | :-------------- |
 | 16/08/2026 | 1.0    | Criação do documento com requisitos funcionais, não funcionais, atores fluxos lógicos, validação OCR e Dashboard.       | Felipe Postigo  |
 | 03/10/2026 | 1.1    | Criação e adição do diagrama de atividades do Fluxo de Validação de Segurança        | Felipe Postigo  |
+| 04/10/2026 | 1.2    | Criação e adição do diagrama de atividades do Fluxo de Busca e Agendamento da Aula        | Felipe Postigo  |
 
 ---
 
@@ -36,6 +37,9 @@
 6. O Instrutor recebe uma notificação (push ou e-mail) sobre o pedido de aula.
 7. Se o Instrutor **Aceitar**, o status muda para `Confirmada` e o Aluno é notificado. O horário fica definitivamente bloqueado na agenda.
 8. Se o Instrutor **Recusar** (ou não responder em 12 horas), o status muda para `Cancelada`, o horário é liberado na agenda e o Aluno é notificado para buscar outro profissional.
+
+## Diagrama de Atividades
+![Diagrama de Atividades do Fluxo de Busca e Agendamento da Aula ](./diagramas/Diagrama_Atividade_Busca_Agendamento_Aula.png)
 
 ### Fluxo de Avaliação e Reviews
 1. A avaliação só é permitida para aulas cujo status na máquina de estados atingiu `Concluida`.
